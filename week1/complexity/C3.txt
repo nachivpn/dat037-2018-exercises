@@ -1,0 +1,9 @@
+Assuming the functions compute the time in microseconds.
+
+For n=50, we have:
+  10000 · log₂ n = 56438.561... microseconds < 1 second
+  100000 · n = 5000000 = 5 seconds
+..which is reasonable, and:
+  10 · 2^n = 11258999068426240 ≈ 357 years
+  10 · n! = 304140932017133780436126081660647688443776415689605120000000000000 ≈ 9.6e51 years
+..which is not.

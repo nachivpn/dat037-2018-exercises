@@ -1,0 +1,16 @@
+The function
+
+  T(n) = 2^n
+
+describes the number of steps taken in microseconds.
+
+5 billion years is 5e9·365·24·3600·1e6 = 1.5768e23 microseconds.
+
+need to find largest integer n such that T(n) ≤ 1.5768e23.
+
+    T(n) ≤ 1.5768e23       ⇒
+     2^n ≤ 1.5768e23       ⇒
+log₂ 2^n ≤ log₂ 1.5768e23  ⇒
+       n ≤ log₂ 1.5768e23  ⇒
+       n ≤ 77.061...       ⇒
+       n = 77

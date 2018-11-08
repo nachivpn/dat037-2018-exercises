@@ -1,0 +1,8 @@
+5. What is the complexity of adding a single element to an ArrayList ?
+   What is the complexity of adding n elements ?
+
+Given a size of N, it takes O(N) time in the worst case as an increase (resize)
+in size of the internal array might be needed.
+
+Assuming the ArrayList is initially empty, adding O(n) elements takes O(n)
+time. See for example lecture slides for explanation.

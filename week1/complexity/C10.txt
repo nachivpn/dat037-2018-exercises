@@ -1,0 +1,17 @@
+10.  What is the time complexity of the following operations?
+
+> Finding an element in an unsorted array of n elements
+
+O(n) time
+
+> Finding an element in a sorted array of n elements
+
+O(log n) time
+
+> Adding an element to an unsorted array of n elements, assuming there is an empty space at the end of the array
+
+O(n) time
+
+> Adding an element to a sorted array of n elements, assuming there is an empty space at the end of the array (the resulting array should also be sorted)
+
+O(n) time

@@ -1,0 +1,17 @@
+6. Suppose we want to be able to delete elements from a dynamic array.
+
+> If we want to delete an arbitrary element, what is the complexity?
+
+The required time complexity is O(n).
+
+Supposing the index of an element is given as input for deletion, then we must "shift" all elements trailing the deleted index by one index up, which (in the worst case) is n steps---hence requiring O(n) time.
+
+If a value is given instead of the index, the time complexity is still O(n)! Why? :)
+
+If the value of an element is given, then we must walk through the array, find the index (possibly the first occurence of the value), and then do the above operations. Both of which can be implemented in a single traverse, and hence the time complexity still remains O(n).
+
+> What if deletion is allowed to change the order of the elements in the array?
+
+In this case, the required time complexity is merely O(1).
+
+This is because, since the order of the elements don't matter, we can simply copy the last element of the array (if any) to the index of the deleted element, and then decrease the capacity of the array by 1.

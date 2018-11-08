@@ -1,0 +1,25 @@
+O(34x + x²) = O(x²)
+
+
+O(1x + 2x + 3x + 4x + 5x + 6x + 7x) = O(x)
+
+
+O(10^4000 x + 0.005 x² + 103/x³) = O(x²)
+  103/x³ approaches 0 as x approaches infinity.
+
+
+O(10 log₂ x + 2 log₁₀ x) = O(log x)
+  the base of the logarithm is irrelevant in big-O notation since using the
+  logarithm law we have
+    log₂ N = log₂ b · log_b N
+  for any constant b, and since log₂ b is a constant we have
+    O(log₂ N) = O(log_b N)
+  for any constant b
+
+
+O(2^x + 10^x) = O(10^x)
+  10^x and 2^x are different as they do not differ by a constant.
+  10^x / 2^x = 5^x and so O(10^x) ≠ O(2^x).
+
+
+O((x–2) (x–1) x) = O(x³)

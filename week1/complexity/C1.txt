@@ -1,0 +1,6 @@
+log n     is O(log n)
+4n        is O(n)
+n log n   is O(n log n)
+5n² + n   is O(n²)
+3n³       is O(n³)
+n⁴        is O(n⁴)

@@ -1,0 +1,46 @@
+8.
+
+> for (int i = 1; i <= n; i *= 2)
+   for (int j = 0; j <= i; j++)
+       result++;
+
+Time complexity = O(n).
+
+Explanation:
+
+The outer loop runs (log n + 1) times.
+
+The inner loop is a bit more tricky, it runs i times, where the value of i varies with every execution of the outer loop. That is, it runs (2 + 3 + 5 + 9 + ...) times, upto (log n + 1) times (since it is controlled by outer loop). And this can be concretely written as the function:
+
+    t (n) = (1 + 2 + 4 + 8 + ... + 2 ^ log n) - (log n + 1)
+
+now, to compute the first part of this expression, which is a gemotric progression, we use the following formula:
+
+     S_m = a (1 − r ^ m) / (1 − r), r ≠ 1
+
+Substituting a = 1, r = 2, m = log n, we get
+
+     S_(log n + 1) = (1 - 2 ^ log n) / (1 - 2)
+	 = (1 - n) / (1 - 2)
+	 = (1 - n) / (- 1)
+	 = n - 1
+
+and since,
+
+    t (n) = S_(log n + 1) - (log n + 1)
+      	  = n - 1 - log n - 1
+	  = n - log n - 2
+	  = O (n)
+
+> for (int i = 1; i <= n; i *= 2)
+   for (int j = 0; j <= n; j++)
+       result++;
+
+Time complexity = O(n * log n)
+
+Explanation:
+
+The outer loop runs (log n + 1) times.
+The inner loop runs n times.
+
+The total complexity is: n * (log n + 1) = O(n log n).
