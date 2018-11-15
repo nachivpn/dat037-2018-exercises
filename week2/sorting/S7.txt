@@ -1,0 +1,17 @@
+Design a data structure for an anagram finder. It should support two operations:
+
+> a. Create the data structure given a list of words. This operation should have complexity O(n log n), where n is the number of words (assuming that words have a bounded length).
+
+Let's define the "key" of a word to be the result of sorting a word.
+
+We compute the key for all words, and store them along with the words. For this, we could use the interface Map.Entry<K,V> from java.util.
+
+We put all the Map.Entry objects into an array (or any ordered data structure).
+
+Then, we sort the array by the keys (i.e., we use the keys for comparing two objects).
+
+The reason to do this is that all anagrams end up next to each other (which will be useful in the next step).
+
+> b. Given a word, find all its anagrams in the data structure. This operation should have complexity O(m + log n), where m is the number of anagrams found for that word and n is the total number of words in the data structure.
+
+Given a word, now you can use binary search (comparing keys again) on the array to find _one_ anagram of it; all other anagrams are adjacent to this one so you can easily get them from here.

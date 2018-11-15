@@ -1,0 +1,27 @@
+Bubble sort: stable
+  Only swaps when the order is wrong.
+
+
+Insertion sort: stable
+  When inserting, the search only continues until the next element is less than
+  or equal to what is being inserted, so an element is always inserted at
+  higher indices than all equal elements.
+
+
+Mergesort: usually stable, but depends on implementation
+  e.g if splitting so that all elements in the left part came before the
+  elements in the right part, and then merging by preferring elements from the
+  left part when equal, then it will be stable.
+
+
+Selection sort: not stable
+  The swapping can cause an element to be moved past equal elements.
+
+
+Quicksort: not stable
+  One can swap so that equal elements get a different order when partitioning
+  or moving the pivot.
+
+
+Heapsort: not stable
+  Removal from the heap gives the equal elements in any order.

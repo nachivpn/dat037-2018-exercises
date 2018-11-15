@@ -1,0 +1,8 @@
+Consider an empty queue and a full queue.
+Both queues will have rear == (front - 1) % capacity.
+Thus the code for size cannot tell these two cases apart.
+
+One trick to fix this is to alter the queue constructor to allocate an
+array one element bigger than necessary. That way the array never gets
+full (provided the client doesn't try to fill the queue beyond its
+capacity) and the trick for finding the size works.
