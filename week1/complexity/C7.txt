@@ -1,0 +1,7 @@
+a) A dynamic array needs a size variable in any case which indicates how many elements are in it. We can simply decrease it by 1. It is not even necessary to access the underlying array, because we will not access any elements beyond the size of the dynamic array.
+
+b) For example, by adding 1000 elements and then deleting 999.
+
+c) We will get this if we have a full array and perform a series of add - delete - add - delete ... on it
+
+d) We can choose to resize the array to half its size when it has reached, for example, a quarter of its capacity. Resizing is O(n) but the resize still leaves space to add n/4 elements in O(1) each before having to resize again.
