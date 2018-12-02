@@ -1,0 +1,7 @@
+> Leftist heaps don’t try to keep the tree balanced, but just try to stop it from becoming right-heavy.
+> Why can’t we use the same trick to make an efficient BST?
+
+  The leftist heap allows us to freely swap the left tree with the right tree,
+  because it does not implement any ordering of elements which depend on the its
+  presence on the left or right. This is not the case for BSTs: all elements
+  on the left tree must be lesser than all elements on the right tree [why? :)].

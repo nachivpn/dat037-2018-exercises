@@ -1,0 +1,16 @@
+> Is the following statement true or false? Why?
+> Inserting a set of objects into a binary search tree, you get the same tree regardless of what order you insert the objects in.
+
+False. Here's a counter example:
+
+Inserting 1 , 2 produces:
+
+     1
+      \
+       2
+
+and inserting 2 , 1 produces:
+
+    2
+   /   
+  1   

@@ -1,0 +1,17 @@
+> How many nulls are there in a binary tree of n nodes? Why?
+
+n + 1
+
+Proof by induction.
+
+Base case. n = 1
+Tree of one element has two nulls (empty left and right subtrees).
+1 + 1 = 2
+
+Step case. Tree T of n elements has n + 1 nulls.
+Let's add one more element to the tree. The new element will occupy one of the
+nulls, but bring two more (empty left and right subtrees).
+
+n + 1 - 1 + 2 = (n + 1) + 1
+
+Qed.

@@ -1,0 +1,6 @@
+1a.
+Let the element ordering of the heap order property be ≥ instead of ≤.
+
+1b.
+See "MaxPriorityQueue.java".
+

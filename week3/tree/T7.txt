@@ -1,0 +1,22 @@
+> We saw that requiring the tree be perfectly balanced is too strong an invariant for a balanced BST,
+> because it only allows trees of certain sizes. Alternatively, we could have the invariant that the
+> tree is complete, like we did for binary heaps. But this doesn’t work well. Why not?
+
+The following binary tree is a perfectly valid BST
+
+    1
+     \
+      2
+
+but is not complete.
+
+Completeness is a stronger requirement than being balanced.
+
+Balanced says the difference in heights between the left and
+right child of any node must be 1.
+
+Completeness says that the all levels except last must be "full",
+and last level must be "full" on the left.
+
+Every complete tree is balanced [why? :)], but every balanced tree
+is not complete (counter example above).

@@ -1,0 +1,24 @@
+ How would you implement a priority queue using:
+
+> a sorted array?
+
+See lecture slides on "Idea 2" to implement an inefficient priority queue.
+
+Follow me: http://www.cse.chalmers.se/edu/course/DAT037_Datastrukturer/slides/5.pdf#page=19
+
+> an unsorted (dynamic) array?
+
+See lecture slides on "Idea 1" to implement an inefficient priority queue.
+
+follow me: http://www.cse.chalmers.se/edu/course/DAT037_Datastrukturer/slides/5.pdf#page=18
+
+> a binary search tree?
+
+Insert: the underlying BST insert
+Find minimum: get the left most node in the binary search tree (also an underlying BST operation)
+Delete minimum: the underlying BST delete
+
+Complexities (balanced / unbalanced):
+Insert     - O(log n) / O(n)
+Find   min - O(log n) / O(n)
+delete min - O(log n) / O(n)
