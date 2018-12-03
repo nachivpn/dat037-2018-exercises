@@ -1,17 +1,13 @@
 The problem with implementing merge for binary heaps using a tree representation:
 
-    Note that our naive merging algorithm (discussed in lecture) for binary trees
-    does not work because the the result is not a binary heap. This is because a right
-    heavy tree breaks the completeness requirement of a binary heap.
+    Binary heaps are also leftist heaps, but the worst possible ones! The naive merging
+    algorithm (discussed in lecture) used to merge leftists heaps
+    might result in a right heavy tree. For example, consider merging two
+    binary (min) heaps A and B, where the root of B is greater than all nodes in A.
+    The resulting resulting tree A+B is very right heavy since B ends up at the rightmost end of A.
+    And fixing completness of A+B can require upto O(total number of elements) time,
+    which is the same as inserting all elements from one heap into another.
 
-    A simple algorithm to merge two heaps with n elements and k elements is to simply
-    insert k elements into the n-heap. But this will result in O(k * log n) for inserting
-    alone.
-
-    Another option is to build a binary heap from sratch by picking the least element
-    from either of the heaps (like merging arrays in merge sort), but we end up visiting
-    every node of both the heaps, and as before run into a high insertion cost.
-
-    The problem here is that binary heaps (unlike leftists heaps) do not give us useful
-    invariants for quick merging, and in addition we have to maintain
-    the shape property of completeness, which complicates matters.
+    Another option is to build a binary heap from sratch by converting both heaps
+    to sequences, concatenating them, and calling buildHeap() on the final sequence,
+    but this would also cost O(total number of elements)---which is also as bad as before.
