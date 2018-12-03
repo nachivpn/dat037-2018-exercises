@@ -2,6 +2,19 @@
 > because it only allows trees of certain sizes. Alternatively, we could have the invariant that the
 > tree is complete, like we did for binary heaps. But this doesn’t work well. Why not?
 
+For a complete tree of a given size, there is only one possible shape
+the tree can have. In particular, there is only one complete BST
+containing the values {1..n}.
+
+Since there is only one possible shape for the tree, and the values have to
+be placed according to the inorder traversal of the tree.
+
+Then, if you insert the value 0 into the tree, every value moves to
+a different position, which must take O(n) time.
+
+More on complete vs balanced:
+----------------------------
+
 Completeness is a weaker requirement than perfectly balanced, 
 but stronger requirement than being balanced.
 
@@ -13,20 +26,7 @@ the all levels except last must be "full", and last level must be
 Every complete tree is balanced [why? :)], but every balanced tree
 is not complete (counter example below.)
 
-The following binary tree is balanced
-
     1
      \
       2
 
-but not complete.
-
-Moreover, maintaining completeness after insertion is tricky.
-
-Maintaining completeness at the cost of breaking BST invariants as in heaps
-doesn't work in logarithmic time, because sifting operations alone are
-not enough to repair BST invariants.
-
-And the other way round: doing a BST insert and then fixing completeness
-is not possible in a logarithmic traversal of the tree (by rotation for example).
-Instead, we would need to rebuild the entire tree such that it is a complete BST.
