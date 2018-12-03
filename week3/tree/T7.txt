@@ -2,21 +2,31 @@
 > because it only allows trees of certain sizes. Alternatively, we could have the invariant that the
 > tree is complete, like we did for binary heaps. But this doesn’t work well. Why not?
 
-The following binary tree is a perfectly valid BST
+Completeness is a weaker requirement than perfectly balanced, 
+but stronger requirement than being balanced.
+
+Balanced says the difference in heights between the left and
+right child of any node must be 1. While, completeness says that
+the all levels except last must be "full", and last level must be
+"full" on the left.
+
+Every complete tree is balanced [why? :)], but every balanced tree
+is not complete (counter example below.)
+
+The following binary tree is balanced
 
     1
      \
       2
 
-but is not complete.
+but not complete.
 
-Completeness is a stronger requirement than being balanced.
+Moreover, maintaining completeness after insertion is tricky.
 
-Balanced says the difference in heights between the left and
-right child of any node must be 1.
+Maintaining completeness at the cost of breaking BST invariants as in heaps
+doesn't work in logarithmic time, because sifting operations alone are
+not enough to repair BST invariants.
 
-Completeness says that the all levels except last must be "full",
-and last level must be "full" on the left.
-
-Every complete tree is balanced [why? :)], but every balanced tree
-is not complete (counter example above).
+And the other way round: doing a BST insert and then fixing completeness
+is not possible in a logarithmic traversal of the tree (by rotation for example).
+Instead, we would need to rebuild the entire tree such that it is a complete BST.
