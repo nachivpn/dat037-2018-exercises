@@ -1,0 +1,69 @@
+> In AA trees, we only allowed the right child to have the same level as its parent. We could weaken the invariant, so that either child (but not both)
+> can have the same level as its parent. In other words, a 3-node is constructed by a node and either of its children. What happens if you do this?
+> Is there an advantage to doing it? Is there a disadvantage? 
+
+If we weaken the invariant, then breaking the invariant is harder.
+For example, for the case on http://www.cse.chalmers.se/edu/course/DAT037_Datastrukturer/slides/7a-more-trees.pdf#page=40
+, we do not need to skew, because left child can have the same level as the parent.
+
+However, checking if the invariant is broken becomes much harder as we have to check more cases now.
+
+In the previous assumption (with right based invariant), when inserting, we considered two cases to check if invariant is broken:
+
+(number in parenthesis is the level of the node)
+
+- inserted x and broke the invariant of left child of n
+
+    n (1)    
+   /      
+  x (1)
+
+- (created a 4 node) inserted x and broke invariant of righ-right child of m
+
+          m (1)     
+           \ 
+            n (1)
+             \
+              x (1)
+
+But now (with weakened invariant), we have to check five cases!
+
+- inserted n or x, and broke the invariant of parent m
+
+       m (1)
+      / \ 
+ (1) n   x (1)
+
+- (created a 4 node) 
+
+          m (1)     
+           \ 
+            n (1)
+             \
+              x (1)
+	      
+- (created a 4 node) 
+
+      m (1)
+       \
+        n (1)
+       /
+      x (1)
+
+- (created a 4 node)
+
+      m (1)
+     / 
+    n (1)
+     \
+      x (1)
+      
+- (created a 4 node)
+
+        m (1)
+       / 
+      n (1)
+     /
+    x (1)
+
+Now, we also need to fix the invariant for each case!

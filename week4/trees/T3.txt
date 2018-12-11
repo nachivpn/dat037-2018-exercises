@@ -1,0 +1,14 @@
+> In 2-3 trees, we split a 4-node into two 2-nodes. We can’t split a 3-node into two 2-nodes, though. Why not?
+
+A 3-node cannot be split into 2-nodes because we cannot obey
+the definition of a 2-node that it must have two children with the same height.
+This is simply because a 3-node doesn't have sufficient children!
+
+As a counter example, consider this non-leaf (or internal) 3-node:
+
+ 3,5
+ /|\
+2 4 6
+
+which cannot be split into 2-nodes (3) and (5) because
+there's no way for both of them to have two children each of same height!
