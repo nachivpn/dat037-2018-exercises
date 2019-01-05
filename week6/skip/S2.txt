@@ -1,0 +1,26 @@
+> 2-3 tree insertion works by splitting 4-nodes; deterministic skip list insertion works by raising the level of nodes that break the invariant.
+> But they are really the same thing. Can you work out in detail the connection between 2-3 trees and deterministic skip lists?
+
+> Start by making sure you understand how to translate a 2-3 tree to a deterministic skip list, as illustrated in the slides.
+
+  To generate a deterministic skip list from a 2-3 tree, we must do an in-order traversal of a 2-3 tree.
+  And since every node of a 2-3 tree knows its level, we can use that to determine the level of the node
+  in the deterministic skip list (and hence add links appropriately).
+
+
+> Then take a small 2-3 tree and do some insertions that cause nodes to split.
+> Translate your original tree into a deterministic skip list and repeat the insertions.
+> The process should be very similar. What is going on? 
+
+  A 4-node occurs in a 2-3 tree when a node in a certain level has 3 data values.
+  The invariant of a deterministic skip list is broken if there are 3 n-level nodes.
+
+  To fix a 4-node, we split it in to two 2-nodes and absorb the middle value into its parent (in the 4-node).
+  To fix the deterministic skip list, we raise the level of the middle node to n+1.
+
+  Since the absorption might have created another 4-node at the parent, we repeat the process upwards (recursively targeting parent nodes).
+  Since the raising might have broken the invariant at level n+1, we repeat the process for higher levels.
+
+  We're doing the same thing for both the data structures!
+
+

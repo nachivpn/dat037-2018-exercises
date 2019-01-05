@@ -1,0 +1,49 @@
+>  Insert the values 2,1,4,5,9,3,6,7 into:
+a. A probabilistic skip list (you can use this link to flip a virtual coin).
+
+.
+
+> for 2, T,   level = 1
+
+
+.-2
+
+> for 1, T,   level = 1
+
+.-1-2
+
+> for 4, T,   level = 1
+
+.-1-2-4
+
+> for 5, HHT, level = 3
+
+.-------.
+.-------.
+.-1-2-4-5
+
+> for 9, T,   level = 1
+
+.-------.
+.-------.
+.-1-2-4-5-9
+
+> for 3, T,   level = 1
+
+.---------.
+.---------.
+.-1-2-3-4-5-9
+
+
+> for 6, HHT, level = 3
+
+.---------.-.
+.---------.-.
+.-1-2-3-4-5-6-9
+
+
+> for 7, HT,  level = 2
+
+.---------.-.
+.---------.-.-.
+.-1-2-3-4-5-6-7-9

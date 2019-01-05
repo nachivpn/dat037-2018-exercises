@@ -1,0 +1,3 @@
+> What complexity does inserting an element at the front of a singly linked list of n elements have?
+
+O(1) complexity since we have a reference to the first element of the linked list
